@@ -7,7 +7,7 @@ import HomePage from './components/HomePage'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PricingPage from './components/PricingPage';
-
+//hello
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +18,8 @@ function App() {
       
       <Route path="/" element={<HomePage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/about" element={< PricingPage/>} />
+
       
     </Routes>
     <Footer/>

@@ -105,20 +105,20 @@ const HomePage = () => {
       />
       <div className="flex relative flex-col items-center max-w-full w-[628px]">
         <h1 className="self-stretch text-5xl font-bold leading-[60px] max-md:max-w-full max-md:text-4xl max-md:leading-[56px]">
-          <span className="text-indigo-400">Buy</span> and{" "}
-          <span className="text-indigo-400">Sell</span> Digital Assets Online
-          For <span className="text-indigo-400">India's</span> top{" "}
-          <span className="text-indigo-400">go</span>-
-          <span className="text-indigo-400">getters</span>
+          <span className="text-gold2">Buy</span> and{" "}
+          <span className="text-gold2">Sell</span> Digital Assets Online
+          For <span className="text-gold2">India's</span> top{" "}
+          <span className="text-gold2">go</span>-
+          <span className="text-gold2">getters</span>
         </h1>
-        <p className="mt-6 text-xl w-[437px] max-md:max-w-full">
+        <p className="mt-6 font-figma-hand text-xl w-[437px] max-md:max-w-full">
           Your gateway to India's finest ventures. No{" "}
           <span className="text-black">middlemen</span>. No barriers. Just
           acquire, grow, and excel.
         </p>
         <a
           href="#explore"
-          className="px-14 pt-3 pb-4 mt-12 max-w-full text-3xl font-extrabold bg-indigo-400 rounded-xl text-zinc-100 w-[300px] max-md:px-5 max-md:mt-10"
+          className="px-14 pt-3 pb-4 mt-12 max-w-full text-3xl font-extrabold bg-gradient-to-r from-gold to-gold2 rounded-xl text-zinc-100 w-[300px] max-md:px-5 max-md:mt-10"
         >
           Explore Now
         </a>
@@ -134,11 +134,12 @@ const HomePage = () => {
         />
       </div>
     </main>
-      <section className="flex flex-col items-start px-16 py-14 mt-52 w-full bg-indigo-400 rounded-2xl border-2 border-black border-solid max-w-[1202px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
-      <h2 className="text-6xl font-bold text-white leading-[60px] max-md:max-w-full max-md:text-4xl max-md:leading-10">
+      <section className="flex flex-col text-black items-start px-16 py-14 mt-52 w-full bg-gold rounded-2xl border-2 border-black border-solid max-w-[1202px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      <div > 
+      <h2 className="text-6xl font-bold  leading-[60px] max-md:max-w-full max-md:text-4xl max-md:leading-10">
         Your next big thing is waiting
       </h2>
-      <p className="mt-5 text-xl font-medium text-white w-[446px] max-md:max-w-full">
+      <p className="mt-5 text-xl font-medium  w-[446px] max-md:max-w-full">
         Join the community and get exclusive access to our upcoming launches.
       </p>
       <div className="flex gap-4 mt-6 text-sm font-extrabold">
@@ -150,7 +151,7 @@ const HomePage = () => {
         </a>
         <a
           href="#community"
-          className="flex gap-1.5 px-4 py-3 text-white rounded-md border border-white border-solid bg-black bg-opacity-10"
+          className="flex gap-1.5 px-4 py-3 rounded-md border border-white border-solid bg-black bg-opacity-10"
         >
           <img
             loading="lazy"
@@ -160,6 +161,7 @@ const HomePage = () => {
           />
           <span className="basis-auto">Join Community</span>
         </a>
+      </div>
       </div>
     </section>
     </div>
