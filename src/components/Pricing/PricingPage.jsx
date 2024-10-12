@@ -30,7 +30,8 @@ const PricingPage = () => {
 
 </div>
 </section>
-  
+{isBuying ? 
+  <>
 <section className="flex overflow-hidden flex-col justify-center items-center w-full  max-md:px-5 max-md:max-w-full">
 <h1 className="self-stretch mt-28 text-6xl font-bold max-w-full text-black max-md:mt-10 max-md:mr-2.5 max-md:max-w-full max-md:text-4xl">
   <div> Free for anyone</div>
@@ -91,7 +92,6 @@ const PricingPage = () => {
         </div>
       </div>
     </section>
-{/* 2nd part of buy */}
       <section className="flex overflow-hidden flex-col justify-center items-center px-20 py-36 font-semibold bg-white max-md:px-5 max-md:py-24 max-md:max-w-full">
       <div className="flex flex-col items-start mb-0 max-w-full w-[898px] max-md:mb-2.5 text-left">
         <h2 className="ml-12 text-5xl max-md:ml-2.5 max-md:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-gold
@@ -118,6 +118,34 @@ const PricingPage = () => {
         </p>
       </div>
     </section>
+    </>
+ : 
+ 
+ <section className="flex overflow-hidden flex-col justify-center items-center w-full  max-md:px-5 max-md:max-w-full">
+<h1 className="self-stretch mt-28 text-6xl font-bold max-w-full text-black max-md:mt-10 max-md:mr-2.5 max-md:max-w-full max-md:text-4xl">
+  
+          <span className="font-bold">Sell your digital assets with </span>  <span className="font-bold leading-[85px] bg-clip-text text-transparent bg-gradient-to-r from-gold to-gold2">mango.</span>
+        </h1>
+<div className="flex flex-col items-center max-w-full w-[624px]">
+    
+       
+        <div className="flex row">
+        <span>All Prices are in </span>
+        <div className="flex overflow-hidden gap-1 px-0.5 ml-2 w-11 text-sm font-bold text-black rounded-sm bg-zinc-300">
+       
+          <div className="grow">INR</div>
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/63693617b769a8d6de1e48a5f9f9e62043988c1c04281b8a3977c6f72e2c7c30?placeholderIfAbsent=true&apiKey=c59f5e5e431d46fb9fcb854f2676cd03"
+            alt=""
+            className="object-contain shrink-0 my-auto w-3 rounded-sm aspect-[1.2]"
+          />
+        </div></div>
+        
+        </div>
+        </section>
+        
+        }
     </div>
   );
 };
