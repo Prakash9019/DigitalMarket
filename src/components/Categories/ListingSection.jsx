@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Pagination from "react-js-pagination";
 import ListingCard from "./ListingCard";
 import { useSearchParams } from 'react-router-dom'
+import { data } from "../../data";
 
 const ListingsSection = () => {
   const [searchParams] = useSearchParams();
@@ -9,6 +11,17 @@ const ListingsSection = () => {
   const [filterTag, setFilterTag] = useState("");
   const [minProfit, setMinProfit] = useState("");
   const [maxProfit, setMaxProfit] = useState("");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const resPerPage = 10;
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexOfLastItem = currentPage * resPerPage;
+  const indexOfFirstItem = indexOfLastItem - resPerPage;
+  // const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
 
   const listings = [
     {
@@ -42,14 +55,13 @@ const ListingsSection = () => {
       price: "USD $73,180",
     },
   ];
-
-  const filteredListings = listings.filter(listing =>
+//  (filterTag ? listing.tags.includes(filterTag) : true) &&
+  const filteredListings = data.filter(listing =>
     (listing.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       listing.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    (filterTag ? listing.tags.includes(filterTag) : true) &&
     (minProfit ? parseFloat(listing.price.replace(/[^0-9.-]+/g,"")) >= parseFloat(minProfit) : true) &&
     (maxProfit ? parseFloat(listing.price.replace(/[^0-9.-]+/g,"")) <= parseFloat(maxProfit) : true)
-  );
+  ).slice(indexOfFirstItem, indexOfLastItem);
 
   const sortedListings = [...filteredListings].sort((a, b) => {
     if (sortField === "country") {
@@ -80,13 +92,15 @@ const ListingsSection = () => {
   <option value="country">Country</option>
   <option value="price">Net Profit</option>
 </select>
-<input 
+{/* <input 
   type="text" 
   placeholder="Filter by tag" 
   value={filterTag}
   onChange={e => setFilterTag(e.target.value)}
   className="mt-4 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition duration-200"
-/>
+/> */}
+<div className="gap-10 m-4">
+
 <input 
   type="number" 
   placeholder="Min Profit" 
@@ -101,6 +115,8 @@ const ListingsSection = () => {
   onChange={e => setMaxProfit(e.target.value)}
   className="mt-4 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition duration-200"
 />
+  
+</div>
 
 
       {sortedListings.map((listing, index) => (
@@ -114,6 +130,23 @@ const ListingsSection = () => {
       <button className="self-center mt-11 mb-0 text-xl font-extrabold text-purple-950 max-md:mt-10 max-md:mb-2.5">
         See more
       </button>
+   
+      <div className="flex mt-20 justify-center">
+     <Pagination
+          activePage={currentPage}
+          itemsCountPerPage={resPerPage}
+          totalItemsCount={data.length}
+          onChange={handlePageChange}
+          nextPageText={"Next"}
+          prevPageText={"Prev"}
+          firstPageText={"First"}
+          lastPageText={"Last"}
+          itemClass="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20"
+          activeLinkClassName="z-10 inline-flex items-center border border-indigo-500 bg-indigo-50 text-sm font-medium text-indigo-600 focus:z-20"
+          activeClass="z-10 inline-flex items-center border border-indigo-500 bg-indigo-50 text-sm font-medium text-indigo-600 focus:z-20"
+        />
+    </div>
+      
     </section>
   );
 };

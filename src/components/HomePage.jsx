@@ -140,36 +140,34 @@ const HomePage = () => {
     <FeatureSection />
 
     {/* Refferal section  */}
-    <section className="rounded-xl max-md:pl-5  w-[75%] bg-gradient-to-r from-gold2 to-gold  max-md:mt-10 max-md:w-[60%]">
-      <div className="flex gap-5 max-md:flex-col ">
-        <div className="flex flex-col w-[65%] max-md:ml-0 max-md:w-full p-12">
-          <div className="flex flex-col items-start self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full">
-            <h2 className="text-5xl font-extrabold max-md:max-w-full max-md:text-4xl">
-              Invite and Get Rewarded
-            </h2>
-            <p className="self-stretch mt-9 text-4xl max-md:max-w-full">
-              <span className="text-black">Refer someone and </span>
-              <span className="font-extrabold text-black">earn 18% </span> for
-              <p className="text-black">
-                {" "}
-                 every business bought or sold on mango.{" "}
-              </p>
-            </p>
-            <button className="px-9 py-6 mt-7 text-2xl font-semibold bg-white rounded-[100px] text-purple-950 max-md:px-5">
-              Start Referring Today
-            </button>
-          </div>
-        </div>
-        <div className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e3b29d6b33ec1da99527ee97e81328e377dc6afbc1a6e31957f3129991658f9?placeholderIfAbsent=true&apiKey=42bb954c825745999302100cb42c8fd0"
-            alt="Referral program illustration"
-            className="object-contain grow w-full aspect-[0.8] rounded-[144px_10px_10px_193px] max-md:mt-6"
-          />
-        </div>
+    <section className="rounded-xl max-md:pl-5 w-[100%] bg-gradient-to-r from-gold2 to-gold md:w-[80%] max-md:mt-10 max-md:w-[80%] ">
+  <div className="flex gap-5 max-md:flex-col">
+    <div className="flex flex-col w-[65%] max-md:ml-0 max-md:w-full p-6">
+      <div className="flex flex-col items-start self-stretch my-auto text-black max-md:mt-10 max-md:max-w-full">
+        <h2 className="text-5xl font-extrabold max-md:max-w-full max-md:text-4xl">
+          Invite and Get Rewarded
+        </h2>
+        <p className="self-stretch mt-9 text-4xl max-md:max-w-full">
+          <span className="text-black">Refer someone and </span>
+          <span className="font-extrabold text-black">earn 18% </span> for
+          every business bought or sold on mango.
+        </p>
+        <button className="px-9 py-6 mt-7 text-2xl font-semibold bg-white rounded-[100px] text-purple-950 max-md:px-5">
+          Start Referring Today
+        </button>
       </div>
-    </section>
+    </div>
+    <div className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e3b29d6b33ec1da99527ee97e81328e377dc6afbc1a6e31957f3129991658f9?placeholderIfAbsent=true&apiKey=42bb954c825745999302100cb42c8fd0"
+        alt="Referral program illustration"
+        className="object-contain grow w-full aspect-[0.8] rounded-[144px_10px_10px_193px] max-md:mt-6"
+      />
+    </div>
+  </div>
+</section>
+
 
     {/* end */}
     {/* AccessSection  */}

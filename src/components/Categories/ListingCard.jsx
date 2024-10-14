@@ -10,7 +10,7 @@ const ListingCard = ({
   country,
   description,
   tags,
-  siteAge,
+  years_operating,
   netProfit,
   price,
 }) => {
@@ -30,7 +30,7 @@ const ListingCard = ({
               </div>
               <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col items-start w-full text-base max-md:mt-10">
-                  <h3 className="text-2xl font-extrabold text-purple-950">
+                  <h3 className="text-2xl font-extrabold text-gold">
                     {title}
                   </h3>
                   <div className="flex mt-2 text-xs font-extrabold text-zinc-500">
@@ -45,7 +45,7 @@ const ListingCard = ({
                   <p className="self-stretch mt-2 font-medium text-neutral-700">
                     {description}
                   </p>
-                  <div className="flex gap-3 mt-2 font-medium whitespace-nowrap text-zinc-500">
+                  {/* <div className="flex gap-3 mt-2 font-medium whitespace-nowrap text-zinc-500">
                     {tags.map((tag, index) => (
                       <div
                         key={index}
@@ -54,12 +54,12 @@ const ListingCard = ({
                         {tag}
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                   <div className="flex gap-5 mt-8">
                     <div className="flex flex-col">
                       <div className="font-medium text-zinc-500">Site Age</div>
                       <div className="self-start font-bold text-black">
-                        {siteAge}
+                        {years_operating}
                       </div>
                     </div>
                     <div className="shrink-0 self-start w-px border border-black border-solid h-[21px]" />
@@ -86,7 +86,7 @@ const ListingCard = ({
               <div className="text-xl font-extrabold text-black">{price}</div>
             </div>
             <div className="flex gap-2 mt-52 max-md:mt-10">
-              <button className="px-3 pt-2.5 pb-2.5 text-base flex items-center  font-bold whitespace-nowrap border-2 border-solid border-purple-950 rounded-[100px] text-purple-950 max-sm:w-[50%] max-sm:items-center max-sm:justify-center">
+              <button className="px-3 pt-2.5 pb-2.5 text-base flex items-center  font-bold whitespace-nowrap border-2 border-solid border-gold2 rounded-[100px] text-gold max-sm:w-[50%] max-sm:items-center max-sm:justify-center">
                 <img
                   loading="lazy"
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/edb17847e8650744d2d674383ab3a5083f727fcfc8c3acc29a11e3a804b925b0?placeholderIfAbsent=true&apiKey=42bb954c825745999302100cb42c8fd0"
@@ -95,7 +95,7 @@ const ListingCard = ({
                 />
                 <span >View</span>
               </button>
-              <button className="px-3 pt-2.5 pb-3 text-xs font-extrabold text-white border-2 border-solid bg-purple-950 border-purple-950 rounded-[100px] max-sm:w-[50%]">
+              <button className="px-3 pt-2.5 pb-3 text-xs font-extrabold text-white border-2 border-solid bg-gradient-to-r from-gold2 to-gold border-gold2 rounded-[100px] max-sm:w-[50%]">
                 See Listing
               </button>
             </div>
